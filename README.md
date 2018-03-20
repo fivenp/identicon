@@ -1,15 +1,11 @@
 # PHP-Identicons
 
-![a single icon](http://lehollandaisvolant.net/img/3b/2.png)
-
 PHP-Identicons is a lightweight PHP implementation of Don Park's
 original identicon code for visual representation of MD5 hash values.
 The program uses the PHP GD library for image processing.
 
 The code can be used to generate unique identicons, avatars, and
 system-assigned images based on a user's e-mail address, user ID, etc.
-
-![multiple icons examples](https://lehollandaisvolant.net/img/87/multi.png)
 
 
 ## INSTALLATION
@@ -39,6 +35,8 @@ PHP-Identicons is distributed under the [GPLv3 License](http://www.gnu.org/licen
 
 ## HISTORY
 
-This code was created by Bong Costa in 2009.
+This code was forked from Timo van Neerden [project page on Github](https://github.com/timovn/identicon) which was
+originnially created by Bong Costa in 2009.
+
 It has been forked from its [project page on SourceForge](https://sourceforge.net/projects/identicons/) as I intend to enhance it a bit for personnal usage.
 
