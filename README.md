@@ -31,7 +31,7 @@ $icon = $identicon->create();
 file_put_contents('identicon.png', $icon);
 ```
 
-There's also a more short Version of doing this:
+There's also a shorter Version of doing this:
 ```php
 <?php
 
