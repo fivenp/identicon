@@ -10,27 +10,93 @@ system-assigned images based on a user's e-mail address, user ID, etc.
 
 ## INSTALLATION
 
-Simply save identicon.php somewhere accessible thru a Web URL.
+Install using composer:
 
+```
+$ composer require fivenp/identicon
+```
 
 ## USAGE
 
-PHP-Identicons requires the size (in pixels) and an MD5 hash of
-anything that will uniquely identify a user - usually an e-mail address
-or a user ID. You can also use MD5 hashes of IP addresses.
+### Basic usage
+The code below, will create an identicon from the string "TEST", and save it to ```identicon.png```.
 
-Insert the URL in your HTML image tag that looks something like:
+```php
+<?php
 
-```html
-<img src="path/to/identicon.php?size=48&hash=e4d909c290d0fb1ca068ffaddf22cbd0" />
+use Fivenp\Identicon\Identicon;
+
+$identicon = new Identicon(md5('TEST'));
+$icon = $identicon->create();
+file_put_contents('identicon.png', $icon);
 ```
 
-And that's all there is to it!
+There's also a more short Version of doing this:
+```php
+<?php
 
+use Fivenp\Identicon\Identicon;
+
+file_put_contents('identicon.png', (new Identicon(md5('TEST')))->create());
+```
+
+
+### Advanced usage
+
+You can overwrite some basic settings by passing an `options` array.
+```php
+<?php
+
+use Fivenp\Identicon\Identicon;
+
+$options = array(
+    'size'=>2048, // a value between 16 and 2048 is accepted
+    'backgroundColor'=>array( // must be in red/green/blue
+        "red" => "255",
+        "green" => "255",
+        "blue" => "255",
+    ),
+);
+
+$identicon = new Identicon(md5('TEST'),$options);
+$icon = $identicon->create();
+```
+
+### Even more advanced options
+
+You can overwrite some basic settings by passing an `options` array.
+```php
+<?php
+
+use Fivenp\Identicon\Identicon;
+
+$options = array(
+    'size'=>2048, // a value between 16 and 2048 is accepted
+);
+
+$identicon = new Identicon(md5('TEST'),$options);
+
+// A cusom color palette where the generator is using the colors randomly from
+$identicon->palette = array(
+    'orange' => '#ff944e',
+    'red' => '#e84c3d',
+    'blue' => '#3598db',
+    'black' => '#000000',
+    'white' => '#ffffff',
+);
+
+// A cusom color palette where the generator is using the backgroundColor randomly from
+$identicon->availableBackgroundColors = array(
+    'white',
+    'red',
+);
+
+$icon = $identicon->create();
+```
 
 ## LICENSE
 
-PHP-Identicons is distributed under the [GPLv3 License](http://www.gnu.org/licenses/gpl-3.0.fr.html).
+PHP-Identicons is distributed under the [GPLv3 License](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
 
 ## HISTORY
