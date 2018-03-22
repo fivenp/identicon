@@ -14,7 +14,6 @@ class Identicon {
         'yellowIntense' => '#d9d921',
         'yellowOrange' => '#f1c40f',
         'yellowOrangeIntense' => '#f39c11',
-        'brown' => '#e67f22',
         'brownIntense' => '#d25400',
         'orange' => '#ff944e',
         'orangeIntense' => '#ff5500',
@@ -26,8 +25,6 @@ class Identicon {
         'darkBlueIntense' => '#2d3e50',
         'lightGrey' => '#ecf0f1',
         'lightGreyIntense' => '#bec3c7',
-        'grey' => '#95a5a5',
-        'greyIntense' => '#7e8c8d',
         'magenta' => '#ef3e96',
         'magentaIntense' => '#e52383',
         'violet' => '#df21b9',
@@ -42,6 +39,7 @@ class Identicon {
         'lightGrey',
         'darkBlueIntense',
         'lightBlack',
+        'lightGrey',
     );
 
     var $size = 1024;
