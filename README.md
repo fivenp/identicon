@@ -31,7 +31,7 @@ $icon = $identicon->create();
 file_put_contents('identicon.png', $icon);
 ```
 
-There's also a shorter Version of doing this:
+There's also a shorter version of doing this:
 ```php
 <?php
 
@@ -64,7 +64,7 @@ $icon = $identicon->create();
 
 ### Even more advanced options
 
-You can overwrite some basic settings by passing an `options` array.
+You can also overwrite some more advanced settings
 ```php
 <?php
 

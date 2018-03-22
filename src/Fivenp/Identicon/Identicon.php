@@ -196,7 +196,7 @@ class Identicon {
                     0,1
                 );
                 break;
-            case 2: // mouse ears
+            case 2: // horseshoe
                 $shape=array(0.5,0,1,0.5,0.5,1,0,0.5,0.3,0.5,0.5,0.71,0.71,0.5,0.5,0.3);
                 break;
             case 3: // ribbon
