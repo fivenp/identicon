@@ -197,13 +197,7 @@ class Identicon {
                 );
                 break;
             case 2: // mouse ears
-                $shape=array(
-                    0.5,0,
-                    1,0,
-                    1,1,
-                    0.5,1,
-                    1,0.5
-                );
+                $shape=array(0.5,0,1,0.5,0.5,1,0,0.5,0.3,0.5,0.5,0.71,0.71,0.5,0.5,0.3);
                 break;
             case 3: // ribbon
                 $shape=array(
@@ -321,18 +315,8 @@ class Identicon {
                     0.5,0.25
                 );
                 break;
-            case 14: // radioactive
-                $shape=array(
-                    0,0.5,
-                    0.5,0.5,
-                    0.5,0,
-                    1,0,
-                    0.5,0.5,
-                    1,0.5,
-                    0.5,1,
-                    0.5,0.5,
-                    0,1
-                );
+            case 14: // ruby
+                $shape=array(0.50,0,1,0,1,0.5,0.5,1,0,1,0,0.5);
                 break;
             default: // tiles
                 $shape=array(
@@ -364,11 +348,7 @@ class Identicon {
         $sprite=imagecreatetruecolor($spriteZ,$spriteZ);
         imageantialias($sprite,TRUE);
         $fg=imagecolorallocate($sprite,$fR,$fG,$fB);
-        /* make sure there's enough contrast before we use background color of side sprite */
-        if ($usebg>0 && (abs($fR-$bR)>127 || abs($fG-$bG)>127 || abs($fB-$bB)>127))
-            $bg=imagecolorallocate($sprite,$bR,$bG,$bB);
-        else
-            $bg=imagecolorallocate($sprite,33,33,33);
+        $bg=imagecolorallocate($sprite,$bR,$bG,$bB);
         imagefilledrectangle($sprite,0,0,$spriteZ,$spriteZ,$bg);
         switch($shape) {
             case 0: // empty
